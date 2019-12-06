@@ -5,7 +5,13 @@ public class JBrainTetris extends JTetris {
 	
 	JBrainTetris(int width, int height) {
 		super(width, height);
-		// TODO Auto-generated constructor stub
+		brain = new DarrenBrain();
+		
+		brainTimer = new javax.swing.Timer(DELAY/movesPerTick, new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				executeBrainMove();
+			}
+		});
 	}
 
 	private static final int movesPerTick = 1;
